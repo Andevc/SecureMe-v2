@@ -78,6 +78,7 @@ function showPage(id){
   document.getElementById('page-'+id).classList.add('active');
   const navEl = document.getElementById('nav-'+id);
   if(navEl) navEl.classList.add('active');
+  closeMobileMenu();
   window.scrollTo(0,0);
 
   if(id==='test') initTest();
@@ -87,19 +88,59 @@ function showPage(id){
   if(id==='osint') initOSINT();
 }
 
-function toggleMobileMenu(){
+function closeMobileMenu(){
   const nl = document.getElementById('navLinks');
-  nl.style.display = nl.style.display==='flex'?'none':'flex';
+  if(!nl) return;
+  if(window.innerWidth <= 768){
+    nl.style.display = 'none';
+  }
+  nl.dataset.open = 'false';
+}
+
+function toggleMobileMenu(){
+  if(window.innerWidth > 768) return;
+  const nl = document.getElementById('navLinks');
+  const nav = document.getElementById('navbar');
+  const isOpen = nl.dataset.open === 'true';
+  if(isOpen){
+    closeMobileMenu();
+    return;
+  }
+
+  nl.style.display = 'flex';
   nl.style.flexDirection = 'column';
   nl.style.position = 'absolute';
-  nl.style.top = '64px';
+  nl.style.top = (nav ? nav.offsetHeight : 60) + 'px';
   nl.style.left = '0';
   nl.style.right = '0';
   nl.style.background = 'var(--bg)';
-  nl.style.padding = '16px';
+  nl.style.padding = '12px 14px';
+  nl.style.gap = '8px';
   nl.style.borderBottom = '1px solid var(--border)';
   nl.style.zIndex = '999';
+  nl.dataset.open = 'true';
 }
+
+window.addEventListener('resize',()=>{
+  const nl = document.getElementById('navLinks');
+  if(!nl) return;
+  if(window.innerWidth > 768){
+    nl.style.display = 'flex';
+    nl.style.flexDirection = '';
+    nl.style.position = '';
+    nl.style.top = '';
+    nl.style.left = '';
+    nl.style.right = '';
+    nl.style.background = '';
+    nl.style.padding = '';
+    nl.style.gap = '';
+    nl.style.borderBottom = '';
+    nl.style.zIndex = '';
+    nl.dataset.open = 'false';
+  } else if(nl.dataset.open !== 'true') {
+    nl.style.display = 'none';
+  }
+});
 
 // ══════════════════════════════════════════════════════════
 // TEST

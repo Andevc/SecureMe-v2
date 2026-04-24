@@ -448,10 +448,11 @@ footer{border-top:1px solid var(--border);padding:40px;background:var(--bg)}
 
 /* MOBILE */
 @media(max-width:768px){
-   nav{height:60px;padding:0 14px}
+   nav{height:60px;padding:0 14px;justify-content:space-between;gap:10px}
    .page{padding-top:60px}
    .nav-links{display:none}
    .nav-mobile-btn{display:block}
+   .nav-mobile-btn{margin-left:auto}
    .nav-cta{display:none}
    .nav-name{font-size:18px}
 
