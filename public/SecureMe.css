@@ -412,31 +412,109 @@ footer{border-top:1px solid var(--border);padding:40px;background:var(--bg)}
 /* COUNTER ANIMATION */
 .count-up{display:inline-block}
 
+/* TABLET */
+@media(max-width:1024px){
+   nav{padding:0 20px;gap:14px}
+   .nav-name{font-size:20px;letter-spacing:1px}
+   .nav-link{padding:6px 10px;font-size:12px}
+   .nav-cta{padding:8px 14px;font-size:12px}
+
+   .hero{padding:72px 24px 48px}
+   .hero-title{font-size:clamp(54px,11vw,104px)}
+   .hero-sub{font-size:14px;line-height:1.7}
+   .hero-actions{margin-bottom:56px}
+   .hero-stats{max-width:700px;gap:20px}
+
+   .steps-row{grid-template-columns:1fr 1fr}
+   .features-grid{grid-template-columns:1fr 1fr}
+
+   .chart-section{grid-template-columns:1fr;gap:20px}
+   .chart-card{padding:20px}
+   .radar-wrap svg{max-width:100%;height:auto}
+
+   .rec-table-header{display:none}
+   .rec-row{grid-template-columns:44px 1fr;grid-template-rows:auto auto auto;gap:10px;padding:14px 16px}
+   .rec-icon{font-size:22px}
+   .rec-badge{width:fit-content}
+   .rec-expand-btn{justify-self:start}
+   .rec-steps{padding:14px 16px}
+   .rec-steps-title,.rec-step{padding-left:0}
+
+   .guide-page{padding:64px 24px 40px}
+   .guide-cards{grid-template-columns:1fr 1fr}
+   .chat-container{grid-template-columns:1fr}
+   .chat-sidebar{display:none}
+}
+
 /* MOBILE */
 @media(max-width:768px){
-  nav{padding:0 20px}
-  .nav-links{display:none}
-  .nav-mobile-btn{display:block}
-  .hero{padding:60px 20px 40px}
-  .hero-sub{max-width:100%;margin-bottom:36px}
-  .hero-actions{margin-bottom:56px}
-  .hero-stats{gap:18px;max-width:100%}
-  .stat-num{font-size:28px}
-  .stat-unit{font-size:20px}
-  .stat-value{min-height:56px;gap:6px}
-  .section{padding:60px 20px}
-  .dox-grid{grid-template-columns:1fr}
-  .steps-row{grid-template-columns:1fr 1fr}
-  .features-grid{grid-template-columns:1fr}
-  .chart-section{grid-template-columns:1fr}
-  .rec-table-header{display:none}
-  .rec-row{grid-template-columns:50px 1fr;grid-template-rows:auto auto}
-  .rec-expand-btn{display:none}
-  .rec-steps-title,.rec-step{padding-left:0}
-  .test-page,.osint-page,.results-page,.guide-page{padding:60px 20px 40px}
-  .vp-grid{grid-template-columns:1fr 1fr}
-  footer{padding:24px 20px}
-  .footer-inner{flex-direction:column;align-items:flex-start}
+   nav{height:60px;padding:0 14px}
+   .page{padding-top:60px}
+   .nav-links{display:none}
+   .nav-mobile-btn{display:block}
+   .nav-cta{display:none}
+   .nav-name{font-size:18px}
+
+   .hero{min-height:calc(100vh - 60px);padding:48px 16px 32px}
+   .hero-badge{font-size:10px;letter-spacing:0.1em;padding:6px 12px;margin-bottom:22px}
+   .hero-title{font-size:clamp(42px,15vw,76px);line-height:0.86;margin-bottom:18px}
+   .hero-sub{max-width:100%;font-size:13px;margin-bottom:24px}
+   .hero-sub br{display:none}
+   .hero-actions{margin-bottom:36px;gap:10px}
+   .btn-primary,.btn-secondary{width:100%;justify-content:center;padding:12px 16px;font-size:14px}
+
+   .hero-stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:100%}
+   .stat-value{min-height:48px;gap:4px}
+   .stat-num{font-size:24px;letter-spacing:1px}
+   .stat-unit{font-size:16px;padding-bottom:2px}
+   .stat-label{font-size:10px;letter-spacing:0.04em;min-height:24px}
+
+   .section,.how-section,.test-page,.osint-page,.results-page,.guide-page,.chat-page{padding:48px 16px 32px}
+   .dox-grid{grid-template-columns:1fr;gap:26px}
+   .features-grid{grid-template-columns:1fr}
+
+   .test-header,.osint-header,.results-header,.guide-header,.chat-hero{margin-bottom:36px}
+   .q-card{padding:22px}
+   .q-text{font-size:18px}
+   .q-nav{gap:10px}
+
+   .gauge-container{width:250px;height:150px}
+   .gauge-num{font-size:48px}
+   .bar-label{font-size:11px;gap:10px}
+   .bar-name{flex:1;min-width:0}
+
+   .rec-table{border-radius:12px}
+   .rec-row{grid-template-columns:1fr;grid-template-rows:none;gap:8px}
+   .rec-icon{display:none}
+   .rec-desc{font-size:11px}
+
+   .share-section{padding:20px 14px}
+   .share-btn{width:100%;justify-content:center}
+
+   .guide-stats{display:grid;grid-template-columns:1fr 1fr}
+   .gstat{border-right:none;border-bottom:1px solid var(--border)}
+   .gstat:nth-last-child(-n+2){border-bottom:none}
+   .guide-cards{grid-template-columns:1fr}
+
+   .terminal-body{padding:14px;min-height:300px}
+   .terminal-output{font-size:11px;line-height:1.6}
+   .vp-grid{grid-template-columns:1fr}
+
+   .chat-window{min-height:480px}
+   .chat-topbar{padding:12px 14px}
+   .chat-messages{padding:14px;max-height:380px}
+   .chat-msg{max-width:92%}
+
+   footer{padding:20px 16px}
+   .footer-inner{flex-direction:column;align-items:flex-start}
+}
+
+/* SMALL PHONES */
+@media(max-width:480px){
+   .hero-stats{grid-template-columns:1fr;gap:14px;max-width:220px}
+   .stat-label{min-height:0}
+   .steps-row{grid-template-columns:1fr}
+   .guide-stats{grid-template-columns:1fr}
 }
 
 /* EMPTY STATE */
@@ -513,7 +591,6 @@ footer{border-top:1px solid var(--border);padding:40px;background:var(--bg)}
 .topic-btn:hover{border-color:rgba(0,255,136,0.3);color:var(--accent);background:rgba(0,255,136,0.04);transform:translateX(3px)}
 
 @media(max-width:768px){
-  .chat-container{grid-template-columns:1fr}
-  .chat-sidebar{display:none}
-  .chat-page{padding:60px 20px 40px}
+   .chat-container{grid-template-columns:1fr}
+   .chat-sidebar{display:none}
 }
