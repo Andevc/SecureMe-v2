@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SecureMe — Conoce tu exposición digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="SecureMe.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <a href="#" class="nav-brand" onclick="showPage('home');return false">
+    <div class="nav-shield">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M16 2L4 7.5V15.5C4 22.2 9.4 28.5 16 30C22.6 28.5 28 22.2 28 15.5V7.5L16 2Z" fill="url(#sg)" stroke="#00ff88" stroke-width="1"/>
+        <path d="M11 16l4 4 6-7" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs><linearGradient id="sg" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse"><stop stop-color="#00ff88"/><stop offset="1" stop-color="#00aaff"/></linearGradient></defs>
+      </svg>
+    </div>
+    <span class="nav-name">SECURE<em>ME</em></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#" class="nav-link active" id="nav-home" onclick="showPage('home');return false">Inicio</a></li>
+    <li><a href="#" class="nav-link" id="nav-test" onclick="showPage('test');return false">Test</a></li>
+    <li><a href="#" class="nav-link" id="nav-osint" onclick="showPage('osint');return false">Simulador</a></li>
+    <li><a href="#" class="nav-link" id="nav-results" onclick="showPage('results');return false">Resultados</a></li>
+    <li><a href="#" class="nav-link" id="nav-guide" onclick="showPage('guide');return false">Guía</a></li>
+    <li><a href="#" class="nav-link" id="nav-chat" onclick="showPage('chat');return false">Asesor</a></li>
+  </ul>
+  <a href="#" class="nav-cta" onclick="showPage('test');return false">Analizar ahora →</a>
+  <button class="nav-mobile-btn" onclick="toggleMobileMenu()">☰</button>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HOME PAGE
+══════════════════════════════════════════ -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-glow1"></div>
+      <div class="hero-glow2"></div>
+      <div class="hero-glow3"></div>
+    </div>
+
+    <div class="hero-badge">
+      <span class="badge-pulse"></span>
+      HERRAMIENTA EDUCATIVA DE PRIVACIDAD DIGITAL
+    </div>
+
+    <h1 class="hero-title" data-text="¿QUÉ TAN FÁCIL TE ENCUENTRAN?">
+      <span class="line1">¿QUÉ TAN FÁCIL</span>
+      <span class="line2">TE ENCUENTRAN?</span>
+    </h1>
+
+    <p class="hero-sub">
+      SecureMe analiza tu <strong>huella digital</strong> y simula cómo un atacante podría<br>
+      recolectar tu información desde internet — <strong>antes de que ocurra</strong>.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#" class="btn-primary" onclick="showPage('test');return false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        Descubrir mi riesgo
+      </a>
+      <a href="#" class="btn-secondary" onclick="showPage('osint');return false">
+        Ver simulación OSINT →
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-value"><span class="stat-num count-up" data-target="68">0</span><span class="stat-unit">%</span></div>
+        <span class="stat-label">usuarios en riesgo alto</span>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value"><span class="stat-num count-up" data-target="4">0</span><span class="stat-unit">MIN</span></div>
+        <span class="stat-label">para el análisis</span>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value"><span class="stat-num" style="color:var(--accent)">100</span><span class="stat-unit" style="color:var(--accent)">%</span></div>
+        <span class="stat-label">privado & local</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- THREAT TICKER -->
+  <div class="threat-ticker">
+    <div class="ticker-inner" id="ticker">
+      <span class="ticker-item"><span class="ticker-dot"></span>DOXING EN AUMENTO +340% DESDE 2020</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>1 DE CADA 3 USUARIOS TIENEN SU TELÉFONO EXPUESTO</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>METADATOS GPS EN FOTOS: VECTOR #1 DE RASTREO</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>15 MINUTOS PARA CONSTRUIR UN PERFIL COMPLETO</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>MISMO USERNAME = RASTRO DIGITAL PERFECTO</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>PERFILES PÚBLICOS INDEXADOS EN BASES DE DATOS OSINT</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>DOXING EN AUMENTO +340% DESDE 2020</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>1 DE CADA 3 USUARIOS TIENEN SU TELÉFONO EXPUESTO</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>METADATOS GPS EN FOTOS: VECTOR #1 DE RASTREO</span>
+      <span class="ticker-item"><span class="ticker-dot"></span>15 MINUTOS PARA CONSTRUIR UN PERFIL COMPLETO</span>
+    </div>
+  </div>
+
+  <!-- DOXING SECTION -->
+  <div class="section reveal">
+    <div class="section-label">// DEFINICIÓN</div>
+    <div class="dox-grid">
+      <div class="dox-text">
+        <h2 class="section-title">El doxing no es<br><span style="color:var(--accent2)">ciencia ficción</span></h2>
+        <p>El <strong>doxing</strong> es la recolección y publicación de información privada de una persona usando únicamente datos públicos disponibles en internet.</p>
+        <p>No requiere habilidades técnicas avanzadas. Con tu nombre de usuario, una foto y acceso a redes sociales públicas, alguien puede construir un perfil completo en <strong>menos de 15 minutos</strong>.</p>
+        <p>La mayoría de las víctimas no saben que están expuestas <strong>hasta que es demasiado tarde</strong>.</p>
+        <div class="highlight-box">
+          <strong>⚠️ Dato crítico:</strong> El 68% de los usuarios que completan nuestro test obtienen un score de riesgo ALTO o CRÍTICO — sin saberlo.
+        </div>
+      </div>
+      <div class="threat-list">
+        <div class="threat-card">
+          <div class="threat-icon-wrap">📍</div>
+          <div><div class="threat-title">Exposición de ubicación</div><div class="threat-desc">Tus fotos revelan dónde vivís, trabajás y te movés</div></div>
+        </div>
+        <div class="threat-card">
+          <div class="threat-icon-wrap">🎭</div>
+          <div><div class="threat-title">Robo de identidad</div><div class="threat-desc">Datos públicos combinados suplantan tu identidad</div></div>
+        </div>
+        <div class="threat-card">
+          <div class="threat-icon-wrap">📧</div>
+          <div><div class="threat-title">Acoso dirigido</div><div class="threat-desc">Username repetido = rastreo en todas las plataformas</div></div>
+        </div>
+        <div class="threat-card">
+          <div class="threat-icon-wrap">💰</div>
+          <div><div class="threat-title">Sextorsión y extorsión</div><div class="threat-desc">Información personal usada como herramienta de presión</div></div>
+        </div>
+        <div class="threat-card">
+          <div class="threat-icon-wrap">⚠️</div>
+          <div><div class="threat-title">Violencia digital → física</div><div class="threat-desc">El doxing es el primer paso de ataques más graves</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="how-section">
+    <div class="how-inner">
+      <div class="section-label reveal">// CÓMO FUNCIONA</div>
+      <h2 class="section-title reveal">Cuatro pasos para conocer<br>tu exposición real</h2>
+      <div class="steps-row reveal">
+        <div class="step-card">
+          <div class="step-num">PASO 01</div>
+          <div class="step-emoji">📋</div>
+          <div class="step-title">Test de exposición</div>
+          <p class="step-desc">10 preguntas sobre tus hábitos digitales, redes sociales y configuración de privacidad.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">PASO 02</div>
+          <div class="step-emoji">🧮</div>
+          <div class="step-title">Score de riesgo</div>
+          <p class="step-desc">El sistema pondera cada factor y genera un score de 0–100 con nivel de riesgo.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">PASO 03</div>
+          <div class="step-emoji">🔍</div>
+          <div class="step-title">Simulación OSINT</div>
+          <p class="step-desc">Ve paso a paso cómo un atacante usaría tu información pública para encontrarte.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">PASO 04</div>
+          <div class="step-emoji">🛡️</div>
+          <div class="step-title">Recomendaciones</div>
+          <p class="step-desc">Consejos personalizados según tus factores de riesgo detectados.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="section reveal">
+    <div class="section-label">// FUNCIONALIDADES</div>
+    <h2 class="section-title">Todo lo que incluye<br>el análisis</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-tag">TEST</span>
+        <div class="feature-title">Test de Exposición Digital</div>
+        <p class="feature-desc">10 preguntas sobre Instagram, ubicación, teléfono, usernames y metadatos. Score de 0 a 100.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-tag">ANÁLISIS</span>
+        <div class="feature-title">Score Visual con Gauge</div>
+        <p class="feature-desc">Medidor animado con tu puntaje, gráfico radar de factores, y barras de riesgo por categoría.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-tag">SIMULACIÓN</span>
+        <div class="feature-title">Terminal OSINT en Vivo</div>
+        <p class="feature-desc">Simulación animada de cómo un atacante investigaría tu perfil usando técnicas OSINT reales.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-tag">CONSEJOS</span>
+        <div class="feature-title">Recomendaciones Personalizadas</div>
+        <p class="feature-desc">Solo los consejos que aplican a tu situación, con pasos accionables específicos.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-tag">COMPARTIR</span>
+        <div class="feature-title">Comparte tu Score</div>
+        <p class="feature-desc">Genera texto para Twitter/X o copia tu resultado para concienciar a tu red.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-tag">PRIVACIDAD</span>
+        <div class="feature-title">100% en tu Navegador</div>
+        <p class="feature-desc">Zero datos enviados a servidores. Todo local. Sin cookies. Sin tracking.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section reveal">
+    <div class="cta-glow"></div>
+    <h2 class="cta-title">Tu privacidad<br><span>empieza con saber</span></h2>
+    <p class="cta-sub">El análisis toma menos de 4 minutos. Sin registro. Sin datos guardados.</p>
+    <a href="#" class="btn-primary" onclick="showPage('test');return false" style="font-size:16px;padding:16px 40px">
+      Analizar mi exposición →
+    </a>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="footer-brand">SECURE<em>ME</em></span>
+        <span class="footer-copy">© 2026 Pacha Devs — Hackathon Edition</span>
+      </div>
+      <div class="footer-tags">
+        <span class="ftag">v2.0.0</span>
+        <span class="ftag">PACHA DEVS</span>
+        <span class="ftag">PRIVACY-FIRST</span>
+        <span class="ftag">MIT LICENSE</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TEST PAGE
+══════════════════════════════════════════ -->
+<div class="page" id="page-test">
+  <div class="test-page">
+    <div class="test-header">
+      <h1>¿QUÉ TAN FÁCIL ES <em>DOXEARTE</em>?</h1>
+      <p>Respondé 10 preguntas sobre tus hábitos digitales y descubrí cuánta información tuya está disponible para cualquiera que busque.</p>
+      <div class="test-chips">
+        <span class="chip chip-green">Sin registro</span>
+        <span class="chip chip-blue">100% privado</span>
+        <span class="chip chip-red">Resultados al instante</span>
+      </div>
+    </div>
+
+    <div class="test-progress">
+      <div class="progress-track"><div class="progress-bar" id="progressBar" style="width:0%"></div></div>
+      <span class="progress-text" id="progressText">0/10</span>
+    </div>
+
+    <div class="q-wrap" id="questionWrap"></div>
+
+    <div class="q-dots" id="qDots"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     OSINT SIMULATOR
+══════════════════════════════════════════ -->
+<div class="page" id="page-osint">
+  <div class="osint-page">
+    <div class="osint-header">
+      <div class="section-label">// SIMULADOR OSINT</div>
+      <h1>ASÍ TE <span style="color:var(--accent2)">INVESTIGA</span><br>UN ATACANTE</h1>
+      <p>Esta simulación muestra las técnicas reales que usa la inteligencia de fuentes abiertas (OSINT) para construir un perfil de una persona. Todos los datos son ficticios.</p>
+    </div>
+
+    <div class="terminal-wrap">
+      <div class="terminal">
+        <div class="terminal-bar">
+          <div class="t-dot"></div><div class="t-dot"></div><div class="t-dot"></div>
+          <span class="terminal-title">osint-scanner v3.2.1 — MODO EDUCATIVO</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-output" id="terminalOutput"></div>
+        </div>
+      </div>
+
+      <div class="risk-meter" id="riskMeter">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font-family:var(--mono);font-size:11px;color:var(--muted2)">NIVEL DE EXPOSICIÓN DETECTADO</span>
+          <span id="riskPct" style="font-family:var(--mono);font-size:20px;font-weight:700;color:var(--accent2)">0%</span>
+        </div>
+        <div class="risk-bar-wrap"><div class="risk-bar" id="riskBarEl" style="width:0%;background:var(--accent2)"></div></div>
+        <div class="risk-labels"><span>BAJO</span><span>MEDIO</span><span>ALTO</span><span>CRÍTICO</span></div>
+      </div>
+
+      <div class="victim-profile" id="victimProfile">
+        <div class="vp-title">⚠️ PERFIL CONSTRUIDO — DATOS FICTICIOS PARA DEMOSTRACIÓN</div>
+        <div class="vp-grid">
+          <div class="vp-field"><div class="vp-label">NOMBRE REAL</div><div class="vp-value">María González</div><div class="vp-risk">← via Instagram bio</div></div>
+          <div class="vp-field"><div class="vp-label">USERNAME</div><div class="vp-value">@mariagonzalez_</div><div class="vp-risk">← en 6 plataformas</div></div>
+          <div class="vp-field"><div class="vp-label">CIUDAD</div><div class="vp-value">La Paz, Bolivia</div><div class="vp-risk">← via geotag fotos</div></div>
+          <div class="vp-field"><div class="vp-label">TELÉFONO</div><div class="vp-value">+591 7XX-XXXX</div><div class="vp-risk">← via Facebook</div></div>
+          <div class="vp-field"><div class="vp-label">LUGAR DE TRABAJO</div><div class="vp-value">UMSA — Ing. Sistemas</div><div class="vp-risk">← via LinkedIn</div></div>
+          <div class="vp-field"><div class="vp-label">RUTINA DIARIA</div><div class="vp-value">L-V 8am-6pm</div><div class="vp-risk">← via check-ins</div></div>
+          <div class="vp-field"><div class="vp-label">DIRECCIÓN APROX.</div><div class="vp-value">Zona Sur, La Paz</div><div class="vp-risk">← via metadatos GPS</div></div>
+          <div class="vp-field"><div class="vp-label">CORREO</div><div class="vp-value">maria.g@gmail.com</div><div class="vp-risk">← via perfil público</div></div>
+          <div class="vp-field"><div class="vp-label">TIEMPO TOTAL</div><div class="vp-value" style="color:var(--accent2);font-size:18px;font-weight:700">12 minutos</div><div class="vp-risk">← sin skills técnicas</div></div>
+        </div>
+      </div>
+
+      <div class="osint-controls">
+        <button class="btn-primary" id="startSimBtn" onclick="startOSINT()">
+          ▶ Iniciar Simulación
+        </button>
+        <button class="btn-secondary" id="resetSimBtn" onclick="resetOSINT()" style="display:none">
+          ↺ Reiniciar
+        </button>
+        <a href="#" class="btn-secondary" onclick="showPage('test');return false">
+          Hacer el test →
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     RESULTS PAGE
+══════════════════════════════════════════ -->
+<div class="page" id="page-results">
+  <div class="results-page">
+    <div class="results-header">
+      <div class="section-label">// TUS RESULTADOS</div>
+      <h1>ANÁLISIS DE <span style="color:var(--accent)">EXPOSICIÓN</span></h1>
+      <p style="font-family:var(--mono);font-size:13px;color:var(--muted2)">Basado en tu test de seguridad digital</p>
+    </div>
+
+    <div id="resultsContent"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     GUIDE PAGE
+══════════════════════════════════════════ -->
+<div class="page" id="page-guide">
+  <div class="guide-page">
+    <div class="guide-header">
+      <div class="section-label">// GUÍA DE PROTECCIÓN</div>
+      <h1>PREVENCIÓN DE<br><span style="color:var(--accent)">VIOLENCIA DIGITAL</span></h1>
+      <p>20 recomendaciones esenciales para protegerte en el entorno digital, organizadas por urgencia.</p>
+    </div>
+
+    <div class="guide-stats" style="max-width:500px;margin:0 auto 60px">
+      <div class="gstat"><span class="gstat-num" style="color:var(--accent)">20</span><span class="gstat-label">TOTAL</span></div>
+      <div class="gstat"><span class="gstat-num" style="color:var(--accent2)">7</span><span class="gstat-label">URGENTES</span></div>
+      <div class="gstat"><span class="gstat-num" style="color:var(--accent4)">8</span><span class="gstat-label">IMPORTANTES</span></div>
+      <div class="gstat"><span class="gstat-num" style="color:var(--accent)">5</span><span class="gstat-label">PRÁCTICAS</span></div>
+    </div>
+
+    <div id="guideContent"></div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     CHATBOT PAGE
+══════════════════════════════════════════ -->
+<div class="page" id="page-chat">
+  <div class="chat-page">
+    <div class="chat-hero">
+      <div class="section-label">// ASESOR VIRTUAL</div>
+      <h1 class="chat-title">ASESOR DE <span style="color:var(--accent)">PRIVACIDAD</span></h1>
+      <p class="chat-subtitle">Consultá tus dudas sobre privacidad digital, ciberseguridad y violencia online. Respuestas inmediatas, sin registro.</p>
+    </div>
+
+    <div class="chat-container">
+      <div class="chat-window">
+        <div class="chat-topbar">
+          <div class="chat-agent-info">
+            <div class="chat-avatar">
+              <svg width="20" height="20" viewBox="0 0 32 32" fill="none">
+                <path d="M16 2L4 7.5V15.5C4 22.2 9.4 28.5 16 30C22.6 28.5 28 22.2 28 15.5V7.5L16 2Z" fill="url(#sg2)" stroke="#00ff88" stroke-width="0.5"/>
+                <path d="M11 16l4 4 6-7" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs><linearGradient id="sg2" x1="4" y1="2" x2="28" y2="30"><stop stop-color="#00ff88"/><stop offset="1" stop-color="#00aaff"/></linearGradient></defs>
+              </svg>
+            </div>
+            <div>
+              <div class="chat-agent-name">SecureMe Asesor</div>
+              <div class="chat-agent-status"><span class="status-dot"></span>En línea — respuesta inmediata</div>
+            </div>
+          </div>
+          <div class="chat-score-tag" id="chatScoreTag" style="display:none">
+            <span style="font-family:var(--mono);font-size:10px;color:var(--muted2)">TU SCORE</span>
+            <span id="chatScoreNum" style="font-family:var(--display);font-size:18px;letter-spacing:1px;color:var(--accent)">—</span>
+          </div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages"></div>
+
+        <div class="chat-quick" id="chatQuick">
+          <div class="quick-label">Preguntas frecuentes</div>
+          <div class="quick-btns" id="quickBtns"></div>
+        </div>
+
+        <div class="chat-input-area">
+          <input type="text" class="chat-input" id="chatInput" placeholder="Escribí tu pregunta sobre privacidad digital..." maxlength="200" onkeydown="chatKey(event)"/>
+          <button class="chat-send" onclick="sendChat()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="chat-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-title">TEMAS DISPONIBLES</div>
+          <div class="topic-list">
+            <button class="topic-btn" onclick="askTopic('instagram')">🔒 Configurar Instagram privado</button>
+            <button class="topic-btn" onclick="askTopic('2fa')">🔐 Activar 2FA</button>
+            <button class="topic-btn" onclick="askTopic('doxing')">🕵️ Qué es el doxing</button>
+            <button class="topic-btn" onclick="askTopic('grooming')">⚠️ Reconocer grooming</button>
+            <button class="topic-btn" onclick="askTopic('metadatos')">📍 Metadatos GPS en fotos</button>
+            <button class="topic-btn" onclick="askTopic('denuncia')">📋 Cómo denunciar en Bolivia</button>
+            <button class="topic-btn" onclick="askTopic('sextorsion')">🚨 Sextorsión: qué hacer</button>
+            <button class="topic-btn" onclick="askTopic('contrasenas')">🔑 Contraseñas seguras</button>
+            <button class="topic-btn" onclick="askTopic('facebook')">👤 Privacidad en Facebook</button>
+            <button class="topic-btn" onclick="askTopic('breach')">💧 Filtraciones de datos</button>
+          </div>
+        </div>
+        <div class="sidebar-card" style="border-color:rgba(255,51,85,0.2)">
+          <div class="sidebar-title" style="color:var(--accent2)">RECURSOS DE EMERGENCIA</div>
+          <div style="font-family:var(--mono);font-size:11px;color:var(--muted2);line-height:1.9">
+            <div>🚨 <strong style="color:var(--text)">SEPDAVI Bolivia</strong><br>Servicio Plurinacional de la Víctima</div>
+            <div style="margin-top:10px">⚖️ <strong style="color:var(--text)">Ministerio Público</strong><br>Denuncia formal de delitos digitales</div>
+            <div style="margin-top:10px">🌐 <strong style="color:var(--text)">haveibeenpwned.com</strong><br>Verificá si tu email fue filtrado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span class="toast-icon" id="toastIcon">✅</span>
+  <span id="toastMsg">Copiado al portapapeles</span>
+</div>
+
+<script src="SecureMe.js"></script>
+</body>
+</html>
